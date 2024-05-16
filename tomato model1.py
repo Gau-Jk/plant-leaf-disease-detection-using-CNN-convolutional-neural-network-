@@ -10,8 +10,8 @@ from keras.layers import Dense
 from keras.layers import GlobalAveragePooling2D
 from keras.preprocessing.image import ImageDataGenerator
 
-train_dir = "C:/Users/gauth/OneDrive/Desktop/SPLITdata/train"
-test_dir = "C:/Users/gauth/OneDrive/Desktop/SPLITdata/val"
+train_dir = "C:/train"
+test_dir = "C:/val"
 
 data_augmentation = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.RandomFlip("horizontal",
@@ -96,9 +96,9 @@ class_names=['Apple___Apple_scab',
  'Apple___Cedar_apple_rust',
  'Apple___healthy',]
 # Load the model (Replace 'load_model()' with your actual method of loading the model)
-load_model = tf.keras.models.load_model("C:/Users/gauth/Documents/prototypes/pretrain_model2.h5")
+load_model = tf.keras.models.load_model("C:/pretrain_model2.h5")
 test_data = tf.keras.preprocessing.image_dataset_from_directory(
-    directory="C:/Users/gauth/OneDrive/Desktop/test",
+    directory="C:/test",#image for testing
     image_size=IMG_SIZE,
     label_mode='categorical',
     batch_size=BATCH_SIZE,
